@@ -12,5 +12,7 @@ if __name__ == "__main__":
     # Make Data
     df1, df2 = gen_data(10)
 
-    # Find Closest Point
+    # Find Closest Point - Version 1.0
     find_closet_point_ver1(df1, df2)
+
+    # Find Closest Point - Version 1.1

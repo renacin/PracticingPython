@@ -96,3 +96,8 @@ def find_closet_point_ver1(df1, df2):
     df1["Clst_Index_1"] = clst_point_index
 
 # ----------------------------------------------------------------------------------------------------------------------
+"""
+Version 1.1
+Notes:
+    + Basic Comparison Between Points, However, Using Cython
+"""
