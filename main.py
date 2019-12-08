@@ -11,7 +11,7 @@ from functions import *
 if __name__ == "__main__":
 
     # Make Data
-    set_1, set_2 = random_data(100)
+    set_1_x, set_1_y, set_2_x, set_2_y = gen_data(100)
 
-    # Find Closest | Save For Comparison | Time As Baseline
-    clst_points_distances, clst_point_index = find_closet_point_ver1(set_1, set_2)
+    # Find Closest Point
+    find_closet_point_ver1(set_1_x, set_1_y, set_2_x, set_2_y)
