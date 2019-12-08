@@ -10,7 +10,7 @@ from time import perf_counter
 if __name__ == "__main__":
 
     # Make Data
-    set_1_x, set_1_y, set_2_x, set_2_y = gen_data(100)
+    df1, df2 = gen_data(10)
 
     # Find Closest Point
-    find_closet_point_ver1(set_1_x, set_1_y, set_2_x, set_2_y)
+    find_closet_point_ver1(df1, df2)

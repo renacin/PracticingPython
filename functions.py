@@ -40,7 +40,7 @@ def random_gen(number_of_rows):
 # Create Test Data, Use Slower Calculation With GeoPy, Turn Into Pandas DF
 def gen_data(num):
     dataset_1_xs, dataset_1_ys = random_gen(num)
-    dataset_2_xs, dataset_2_ys = random_gen(num)
+    dataset_2_xs, dataset_2_ys = random_gen(num * 2)
 
     data_1 = {
         "Xs_1": dataset_1_xs,
@@ -65,18 +65,23 @@ Notes:
 """
 
 # Version #1 Of Search Function - Basic Calculate, Compare, and Retrieve
-def find_closet_point_ver1(data_1, data_2):
+def find_closet_point_ver1(df1, df2):
+
     # Lists To Be Populated
     clst_point_distance = []
     clst_point_index = []
 
     # Loop Through Dataset 1 & Find Closet Point In Dataset 2
-    for point_1 in data_1:
+    for index1, row1 in df1.iterrows():
+        point_1 = (row1['Xs_1'], row1['Ys_1'])
+
+        # To Temporarily Store Distance Data
         temp_list = []
 
         # Find Distance To All Other Points
-        for point_2 in data_2:
-            distance_km = geopy.distance.distance(point_1, point_2).km # According To Line Profiler Alot Of Time Wasted Here
+        for index2, row2 in df2.iterrows():
+            point_2 = (row2['Xs_2'], row2['Ys_2'])
+            distance_km = geopy.distance.distance(point_1, point_2).km
             temp_list.append(round(distance_km, 2))
 
         # Find Smallest Distance In List, and Return Index
@@ -87,6 +92,7 @@ def find_closet_point_ver1(data_1, data_2):
         clst_point_distance.append(clst_distance)
         clst_point_index.append(clst_point_idx)
 
-    return clst_point_distance, clst_point_index
+    df1["Clst_Point_1"] = clst_point_distance
+    df1["Clst_Index_1"] = clst_point_index
 
 # ----------------------------------------------------------------------------------------------------------------------
