@@ -19,6 +19,7 @@ Questions Answered:
 """
 # ----------------------------------------------------------------------------------------------------------------------
 import random
+import pandas as pd
 import geopy.distance
 
 import statistics
@@ -41,25 +42,40 @@ def gen_data(num):
     dataset_1_xs, dataset_1_ys = random_gen(num)
     dataset_2_xs, dataset_2_ys = random_gen(num)
 
-    return dataset_1_xs, dataset_1_ys, dataset_2_xs, dataset_2_ys
+    data_1 = {
+        "Xs_1": dataset_1_xs,
+        "Ys_1": dataset_1_ys
+    }
+
+    data_2 = {
+        "Xs_2": dataset_2_xs,
+        "Ys_2": dataset_2_ys
+    }
+
+    df1 = pd.DataFrame.from_dict(data_1)
+    df2 = pd.DataFrame.from_dict(data_2)
+
+    return df1, df2
 
 # ----------------------------------------------------------------------------------------------------------------------
+"""
+Version 1.0
+Notes:
+    + Basic Comparison Between Points
+"""
 
 # Version #1 Of Search Function - Basic Calculate, Compare, and Retrieve
-def find_closet_point_ver1(set_1_x, set_1_y, set_2_x, set_2_y):
-
+def find_closet_point_ver1(data_1, data_2):
     # Lists To Be Populated
     clst_point_distance = []
     clst_point_index = []
 
     # Loop Through Dataset 1 & Find Closet Point In Dataset 2
-    for x1, y1 in zip(set_1_x, set_1_y):
-        point_1 = (x1, y1)
+    for point_1 in data_1:
         temp_list = []
 
         # Find Distance To All Other Points
-        for x2, y2 in zip(set_2_x, set_2_y):
-            point_2 = (x2, y2)
+        for point_2 in data_2:
             distance_km = geopy.distance.distance(point_1, point_2).km # According To Line Profiler Alot Of Time Wasted Here
             temp_list.append(round(distance_km, 2))
 
