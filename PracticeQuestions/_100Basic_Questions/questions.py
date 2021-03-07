@@ -11,6 +11,9 @@ class basic_questions:
     """ This class will store the answers to basic python questions """
 
 
+
+
+
     @staticmethod
     def question_1():
         """
@@ -28,6 +31,8 @@ class basic_questions:
         str_answer = ", ".join(list_of_numbers)
 
         print(str_answer)
+
+
 
 
     @staticmethod
@@ -121,3 +126,93 @@ class basic_questions:
                 return num + sum_num(num - 1)
 
         print(sum_num(9))
+
+
+    @staticmethod
+    def question_2e():
+        """
+        Question:
+        Create a recursive function that will reverse a string. Function will take a string and will return the reversed
+        version of that string.
+        Ex. input = "tag", return "gat"
+
+        Completed:
+        03-07-2021
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        # Dont Forget String Formatting & Slicing!
+        def rev_string(string_input):
+            if len(string_input) <= 1:
+                return string_input
+            else:
+                return string_input[-1] + rev_string(string_input[:-1])
+
+        print(rev_string("dictionary"))
+
+
+
+    @staticmethod
+    def question_2e():
+        """
+        Question:
+        Create a recursive function that will reverse a string. Function will take a string and will return the reversed
+        version of that string.
+        Ex. input = "tag", return "gat"
+
+        Completed:
+        03-07-2021
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        # Dont Forget String Formatting & Slicing!
+        def rev_string(string_input):
+            if len(string_input) <= 1:
+                return string_input
+            else:
+                return string_input[-1] + rev_string(string_input[:-1])
+
+        print(rev_string("dictionary"))
+
+
+    @staticmethod
+    def question_2f():
+        """
+        Question:
+        Create a function that takes a number and the power it will be raised to. Return the value of that calculation
+
+        Completed:
+        03-07-2021
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        def to_power(base_, power_):
+            if power_ == 0:
+                return 1
+
+            else:
+                return base_ * to_power(base_, power_ - 1)
+
+        print(to_power(2, 5))
+
+
+    @staticmethod
+    def question_2g():
+        """
+        Question:
+        Create a function that takes an integer and return the sum of each integer in thhat number.
+
+        Completed:
+        03-07-2021
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        # Need a better understanding of math!
+        def sum_int(num):
+            if num == 0:
+                return 0
+
+            else :
+                return num%10 + sum_int(int(num/10))
+
+        print(sum_int(1028))
