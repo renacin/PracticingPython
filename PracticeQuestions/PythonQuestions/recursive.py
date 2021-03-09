@@ -7,36 +7,13 @@ import time
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-class basic_questions:
-    """ This class will store the answers to basic python questions """
 
-
-
-
-
-    @staticmethod
-    def question_1():
-        """
-        Question:
-        Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5;
-        Between 2000 and 3200 (both included). The numbers obtained should be printed in a
-        comma-separated sequence on a single line.
-
-        Completed:
-        03-06-2021
-        """
-
-        # List Comprehension Is Incredible! Look For Functions That Require Filtered Lists
-        list_of_numbers = [str(x) for x in range(2000, 3201) if (x % 7 == 0) and (x % 5 != 0)]
-        str_answer = ", ".join(list_of_numbers)
-
-        print(str_answer)
-
-
+class recursive_questions:
+    """ This class will store the answers to basic recursive python questions """
 
 
     @staticmethod
-    def question_2a():
+    def question_1a():
         """
         Question:
         Write a program which can compute the factorial of a given number. The results should be printed in a
@@ -59,7 +36,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2b():
+    def question_1b():
         """
         Question:
         Create a function named backwardsby2, which prints numbers in reverse order using steps of 2;
@@ -84,7 +61,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2c():
+    def question_1c():
         """
         Question:
         The Fibonacci sequence happens everywhere in the world and in all of nature. The sequence 0, 1, 1, 2, 3, 5, 8,
@@ -107,7 +84,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2d():
+    def question_1d():
         """
         Question:
         Create a function to find out the sum of numbers from 1 to n. Where N is a user provided input.
@@ -129,7 +106,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2e():
+    def question_1e():
         """
         Question:
         Create a recursive function that will reverse a string. Function will take a string and will return the reversed
@@ -153,7 +130,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2e():
+    def question_1f():
         """
         Question:
         Create a recursive function that will reverse a string. Function will take a string and will return the reversed
@@ -176,7 +153,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2f():
+    def question_1g():
         """
         Question:
         Create a function that takes a number and the power it will be raised to. Return the value of that calculation
@@ -197,7 +174,7 @@ class basic_questions:
 
 
     @staticmethod
-    def question_2g():
+    def question_1h():
         """
         Question:
         Create a function that takes an integer and return the sum of each integer in thhat number.
