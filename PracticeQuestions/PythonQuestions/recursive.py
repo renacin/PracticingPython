@@ -4,6 +4,8 @@
 #
 # ----------------------------------------------------------------------------------------------------------------------
 import time
+import sys
+sys.setrecursionlimit(10000)
 # ----------------------------------------------------------------------------------------------------------------------
 
 
@@ -24,15 +26,19 @@ class recursive_questions:
         03-06-2021
         """
 
-        # Factorial Function | Recursive Programming | Remember Base Case
-        # Sets Up Code & Holds In Memory Until Last Value Is Identified | Then Performs Major Arithmetic
-        # Recursive Programming Is Hard | Need More Examples
+        # Factorial Function | Recursive Programming | Remember Base Case | Implement Cache System: MEMOIZATION
+        num_cache = {}
         def fact(num):
-            if num == 0:
-                return 1
-            return num * fact(num - 1)
 
-        print(fact(8))
+            if num not in num_cache:
+                if num <= 2:
+                    return num
+                else:
+                    num_cache[num] = num * fact(num - 1)
+                    return num_cache[num]
+            return num_cache[num]
+
+        print(fact(100))
 
 
     @staticmethod
@@ -73,14 +79,18 @@ class recursive_questions:
         03-07-2021
         """
 
-        # Need To Understand Sequence Before Trying To Solve!
+        num_cache = {}
         def fib(num):
-            if int(num) <= 1:
-                return num
-            else:
-                return fib(num - 1) + fib(num - 2)
 
-        print(fib(10))
+            if num not in num_cache:
+                if num <= 1:
+                    return num
+                num_cache[num] = fib(num - 1) + fib(num - 2)
+                return num_cache[num]
+            return num_cache[num]
+
+        print(fib(500))
+
 
 
     @staticmethod
@@ -96,13 +106,16 @@ class recursive_questions:
 
         # Define Base Case | Need To Understand Sequence Before Trying To Solve!
         # 0 Sum Equals 0, 1 Sum Equals 1, For 0, 1 Return Num
+        num_cache = {}
         def sum_num(num):
-            if int(num) <= 1:
-                return num
-            else:
+            if num not in num_cache:
+                if num <= 1:
+                    return num
                 return num + sum_num(num - 1)
+            return num_cache[num]
 
-        print(sum_num(9))
+        print(sum_num(1000))
+
 
 
     @staticmethod
@@ -133,29 +146,6 @@ class recursive_questions:
     def question_1f():
         """
         Question:
-        Create a recursive function that will reverse a string. Function will take a string and will return the reversed
-        version of that string.
-        Ex. input = "tag", return "gat"
-
-        Completed:
-        03-07-2021
-        """
-
-        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
-        # Dont Forget String Formatting & Slicing!
-        def rev_string(string_input):
-            if len(string_input) <= 1:
-                return string_input
-            else:
-                return string_input[-1] + rev_string(string_input[:-1])
-
-        print(rev_string("dictionary"))
-
-
-    @staticmethod
-    def question_1g():
-        """
-        Question:
         Create a function that takes a number and the power it will be raised to. Return the value of that calculation
 
         Completed:
@@ -173,11 +163,12 @@ class recursive_questions:
         print(to_power(2, 5))
 
 
+
     @staticmethod
-    def question_1h():
+    def question_1g():
         """
         Question:
-        Create a function that takes an integer and return the sum of each integer in thhat number.
+        Create a function that takes an integer and return the sum of each integer in that number.
 
         Completed:
         03-07-2021
