@@ -213,7 +213,7 @@ class recursive_questions:
             if isinstance(my_list[0], list):
                 return flatten_list(my_list[0]) + flatten_list(my_list[1:])
 
-            # If The First Item Isn't A List Return It And A Function Call On Everything Else
+            # If The First Item Isn't A List Return It AS A LIST ([0] VS [:1]) And A Function Call On Everything Else
             return my_list[:1] + flatten_list(my_list[1:])
 
 
@@ -242,3 +242,33 @@ class recursive_questions:
 
         x_list = [345, 67, 78, 34, 123]
         print(sum_list(x_list))
+
+
+
+    @staticmethod
+    def question_1j():
+        """
+        Question:
+        Create a function that finds the sum of all elements within a list. Nested lists are expected.
+
+        Completed:
+        03-12-2021
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        val_cache = {"RunningTotal": 0}
+        def flatten_sum(my_list):
+            if my_list == []:
+                return my_list
+
+            if isinstance(my_list[0], list):
+                return flatten_sum(my_list[0]) + flatten_sum(my_list[1:])
+
+            else:
+                val_cache["RunningTotal"] += my_list[0]
+                return my_list[:1] + flatten_sum(my_list[1:])
+
+
+
+        nested_list = [1, 2, 3, [4, 5, [6, 7, 8, 9], 10, 11, [12, 13]], 14, 15, [16], [[[17]]]]
+        print(flatten_sum(nested_list), val_cache["RunningTotal"])
