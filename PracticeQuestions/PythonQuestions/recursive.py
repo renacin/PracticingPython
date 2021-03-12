@@ -272,3 +272,22 @@ class recursive_questions:
 
         nested_list = [1, 2, 3, [4, 5, [6, 7, 8, 9], 10, 11, [12, 13]], 14, 15, [16], [[[17]]]]
         print(flatten_sum(nested_list), val_cache["RunningTotal"])
+
+
+
+    @staticmethod
+    def question_1k():
+        """
+        Question:
+        Create a function that finds the harmonic sum; given an input integer greater than 2.
+
+        Completed:
+        N/A
+        """
+
+        def harm_sum(n):
+            if n <= 1:
+                return 1
+            return 1/n + harm_sum(n-1)
+
+        print(harm_sum(10))
