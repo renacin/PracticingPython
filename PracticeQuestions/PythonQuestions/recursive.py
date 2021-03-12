@@ -184,3 +184,20 @@ class recursive_questions:
                 return num%10 + sum_int(int(num/10))
 
         print(sum_int(1028))
+
+
+
+    @staticmethod
+    def question_1g():
+        """
+        Question:
+        Create a function that takes a list of lists, and returns a list with all the values of the list in a single
+        list
+
+        Completed:
+        N/A
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        def nested_list(nlist):
+            pass
