@@ -188,16 +188,57 @@ class recursive_questions:
 
 
     @staticmethod
-    def question_1g():
+    def question_1h():
         """
         Question:
         Create a function that takes a list of lists, and returns a list with all the values of the list in a single
         list
 
+        Notes:
+        You iterate through an entire list with: return my_list[0] + function[1:]
+
         Completed:
-        N/A
+        03-12-2021
         """
 
         # Define Base Case | Need To Understand Sequence Before Trying To Solve!
-        def nested_list(nlist):
-            pass
+        def flatten_list(my_list):
+
+            # If Empty List Return List
+            if my_list == []:
+                return my_list
+
+            # If The First Item In The List Is A List
+            # Return Function Call On First Item And Function Call On Everything Else
+            if isinstance(my_list[0], list):
+                return flatten_list(my_list[0]) + flatten_list(my_list[1:])
+
+            # If The First Item Isn't A List Return It And A Function Call On Everything Else
+            return my_list[:1] + flatten_list(my_list[1:])
+
+
+        nested_list = [1, 2, 3, [4, 5, [6, 7, 8, 9], 10, 11, [12, 13]], 14, 15, [16], [[[17]]]]
+        print(flatten_list(nested_list))
+
+
+
+    @staticmethod
+    def question_1i():
+        """
+        Question:
+        Create a function that takes a list finds the sum of the elements in the list
+
+        Completed:
+        03-12-2021
+        """
+
+        # Define Base Case | Need To Understand Sequence Before Trying To Solve!
+        def sum_list(my_list):
+            if my_list == []:
+                raise Exception("Empty List")
+            if len(my_list) == 1:
+                return my_list[0]
+            return my_list[0] + sum_list(my_list[1:])
+
+        x_list = [345, 67, 78, 34, 123]
+        print(sum_list(x_list))
