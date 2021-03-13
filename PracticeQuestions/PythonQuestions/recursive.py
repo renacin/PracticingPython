@@ -3,8 +3,7 @@
 # Title                                      Various Practice Questions
 #
 # ----------------------------------------------------------------------------------------------------------------------
-import time
-import sys
+import os, sys, time
 sys.setrecursionlimit(10000)
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -282,7 +281,7 @@ class recursive_questions:
         Create a function that finds the harmonic sum; given an input integer greater than 2.
 
         Completed:
-        N/A
+        03-12-2021
         """
 
         def harm_sum(n):
@@ -301,7 +300,7 @@ class recursive_questions:
         Create a function that finds sum of all values across the range 1 - N; And given the function x = 2/n + 10*n - n.
 
         Completed:
-        N/A
+        03-13-2021
         """
 
         num_cache = {}
@@ -317,3 +316,36 @@ class recursive_questions:
 
         print(sum_func(10))
         print(num_cache)
+
+
+
+    @staticmethod
+    def question_1m():
+        """
+        Question:
+        Create a function that returns all files within a folder as a list. Must account for nested folders!
+
+        Completed:
+        N/A
+        """
+
+        file_cache = {"Files": [], "Folders": []}
+        def folder_walk(folder_path):
+
+            directory_ = os.listdir(folder_path)
+            for item in directory_:
+
+                item_path = folder_path + "\\" + item
+
+                # If The Item Is A Folder Store It & Call Recursive Function
+                if os.path.isdir(item_path):
+                    file_cache["Folders"].append(item_path)
+                    folder_walk(item_path)
+
+                # The Item Is A File | Append Data To Cache
+                file_cache["Files"].append(item_path)
+
+        # specify your path of directory
+        path = r"C:\Users\renac\Documents\Programming\Python\PracticingPython\PracticeQuestions\PythonQuestions"
+        folder_walk(path)
+        print(file_cache)

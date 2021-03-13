@@ -1,0 +1,11 @@
+'Files':
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/basic.py'
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/recursive.py'
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/__init__.py'
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/__pycache__/questions.cpython-37.pyc'
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/__pycache__/recursive.cpython-37.pyc'
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/__pycache__/__init__.cpython-37.pyc'
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/__pycache__'
+
+'Folders':
+'C:\\Users\\renac\\Documents\\Programming\\Python\\PracticingPython\\PracticeQuestions\\PythonQuestions/__pycache__']
