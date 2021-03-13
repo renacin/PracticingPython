@@ -291,3 +291,29 @@ class recursive_questions:
             return 1/n + harm_sum(n-1)
 
         print(harm_sum(10))
+
+
+
+    @staticmethod
+    def question_1l():
+        """
+        Question:
+        Create a function that finds sum of all values across the range 1 - N; And given the function x = 2/n + 10*n - n.
+
+        Completed:
+        N/A
+        """
+
+        num_cache = {}
+        def sum_func(n):
+            if n not in num_cache:
+                if n <= 1:
+                    num_cache[n] = 4
+                    return num_cache[n]
+                else:
+                    num_cache[n] = int(((2/n) + (2**n) + n))
+                    return num_cache[n] + sum_func(n-1)
+            return num_cache[n]
+
+        print(sum_func(10))
+        print(num_cache)
