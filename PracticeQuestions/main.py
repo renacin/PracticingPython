@@ -8,4 +8,4 @@ from PythonQuestions.recursive import *
 
 # Main Entry Point Into Python Code
 if __name__ == "__main__":
-    recursive_questions.question_1m()
+    recursive_questions.question_1n()
