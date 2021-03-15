@@ -396,3 +396,30 @@ class recursive_questions:
         path = r"C:\Users\renac\Documents\Programming\Python\PracticingPython\PracticeQuestions\Misc"
         find_picmetadata(path)
         print(picture_cache)
+
+
+
+    @staticmethod
+    def question_1o():
+        """
+        Question:
+        Create a function that finds the greatest common denominator between two integers.
+
+        Completed:
+        03-13-2021
+        """
+
+        def gcd(int_1, int_2):
+        	low = min(int_1, int_2)
+        	high = max(int_1, int_2)
+
+        	if low == 0:
+        		return high
+
+        	elif low == 1:
+        		return 1
+
+        	else:
+        		return gcd(low, high%low)
+
+        print(100, 220)
