@@ -361,7 +361,7 @@ class recursive_questions:
         Create a function that looks for through nested folders for images, and returns their metadata.
 
         Completed:
-        03-13-2021
+        03-14-2021
         """
 
         picture_cache = []
@@ -406,7 +406,7 @@ class recursive_questions:
         Create a function that finds the greatest common denominator between two integers.
 
         Completed:
-        03-13-2021
+        03-15-2021
         """
 
         def gcd(int_1, int_2):
@@ -423,3 +423,52 @@ class recursive_questions:
         		return gcd(low, high%low)
 
         print(100, 220)
+
+
+
+    @staticmethod
+    def question_1p():
+        """
+        Question:
+        There are different types of recursion. From the previous examples we have been calling our recursive functions
+        if a certain parametre was met. In some cases you will need your recursive function to be called everytime an
+        iteration is completed. This is called tail recursion.
+
+        Create a function that implements tail recursion.
+
+        NOTE PYTHON DOESN'T OPTIMIZE FOR TAIL-RECURSION!
+
+        Why Use Tail Recursion?
+            + Allows for some optimization by the compiler
+            + No burden of retaining a stack frame
+            + More readable
+
+        More Examples Of Tail Recursion
+        # Non Tail Recursive
+        def fact(n):
+            if (n == 0):
+                return 1
+            return n * fact(n-1)
+
+        # Tail Recursive
+        def fact(n, a = 1):
+            if (n == 0):
+                return a
+            return fact(n - 1, n * a)
+
+        Completed:
+        03-16-2021
+        """
+
+        def tail_recur(n):
+
+            # Case To Break Recursion
+            if (n < 0):
+                return
+
+            # Else Keep Running | keep Adding To Common Line
+            text_ = str(n) + " "
+            print(text_, end='')
+            tail_recur(n-1)
+
+        tail_recur(5)
