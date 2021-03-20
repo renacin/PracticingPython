@@ -513,3 +513,39 @@ class recursive_questions:
             return b
 
         print(dp_fib_2(100_000))
+
+
+    @staticmethod
+    def question_1r():
+        """
+        Question:
+        Create a function that first finds the change to be returned to a customer given the total price of their purchase
+        as well as the tender given. Additionaly finds the fewest number of coins to return Make note of the number,
+        and value of coins returned.
+
+        Completed:
+        03-20-2021
+        """
+
+        # This Is A Greedy Approach To This Problem | Currently Doesn't Use Recursion
+        def make_change(tender_given, total_price):
+            if tender_given < total_price:
+                return "Insufficient Funds"
+
+            elif tender_given == total_price:
+                return "No Change"
+
+            else:
+                amount = tender_given - total_price
+                change_cache = {50.00: 0, 20.00: 0, 10.00: 0, 5.00: 0, 2.00: 0, 1.00: 0, 0.25: 0, 0.10: 0, 0.05: 0, 0.01: 0}
+                for change in change_cache:
+                    if amount >= change:
+                        num_change = amount // change
+                        amount = round(amount - (num_change * change), 2)
+                        change_cache[change] += num_change
+
+                total_num_change = sum([num for (change, num) in change_cache.items() if num != 0])
+                status_string = f"Price: ${total_price},Tender: ${tender_given}, Change: ${tender_given - total_price}, Number Of Change Items: {total_num_change}"
+                return {change:num for (change, num) in change_cache.items() if num != 0}, status_string
+
+        print(make_change(100, 23.92))
