@@ -472,3 +472,44 @@ class recursive_questions:
             tail_recur(n-1)
 
         tail_recur(5)
+
+
+    @staticmethod
+    def question_1q():
+        """
+        Question:
+        When speaking of recursion there are two general styles of programming. Those two types include basic recursion
+        and dynamic programing. Basic recursion requires that a function call itself in order to solve smaller sub-queries.
+        As useful as this programming technique may be there are a number of glaring issues. Some of those issues include
+        the number of calls to the stack, total runtime, and total memory of algorithms following this programming style.
+        An improvement to this would be dynamic programing; specifically, top-down memoization. In a top-down approach,
+        making use of dynamic programing a developer tries to minimize the number of redundant calculations executed
+        making use of a cache. This is a significant improvement to previous implementations of recursion but still requires
+        recursive calls that may be memory intensive. One improvement to this is bottom-up dynamic programming. In this
+        style of programming developers look to do without recursion and large memory calls by using simple iterators to
+        achieve desired results.
+
+        Create a function that finds the nth value of the Fibonacci sequence making use of a bottom-up approach to
+        dynamic programing.
+
+        Completed:
+        03-19-2021
+        """
+
+        # In This Case Both Space & Time Are O(N)
+        def dp_fib_1(n):
+          cache = [0, 1]
+          for i in range(2, n + 1):
+            cache.append(cache[i - 1] + cache[i - 2])
+          return cache[n]
+
+        # In This Case Space Is O(1) & Time Is O(N) | This really shows off the power of dynamic programming
+        def dp_fib_2(n):
+            a = 0
+            b = 1
+            for i in range(2, n + 1):
+                a = a + b
+                b, a = a, b
+            return b
+
+        print(dp_fib_2(100_000))
