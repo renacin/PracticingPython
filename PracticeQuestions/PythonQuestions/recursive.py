@@ -549,3 +549,23 @@ class recursive_questions:
                 return {change:num for (change, num) in change_cache.items() if num != 0}, status_string
 
         print(make_change(100, 23.92))
+
+
+
+    @staticmethod
+    def question_1s():
+        """
+        Question:
+        Create a function that recursively finds everyway to create change given an input that represents a dollar amount.
+        The input value must be a float greater than 0.00; the function must also output all possible combinations as well
+        as the number of combinations available.
+
+        Completed:
+        03-22-2021
+        """
+
+        # Find Ways To Make Change With Recursion
+        def ways_2_make_change(amount):
+            pass
+
+        print(ways_2_make_change(5.20))
