@@ -557,15 +557,46 @@ class recursive_questions:
         """
         Question:
         Create a function that recursively finds everyway to create change given an input that represents a dollar amount.
-        The input value must be a float greater than 0.00; the function must also output all possible combinations as well
+        The input value must be an integer greater than 1; the function must also output all possible combinations as well
         as the number of combinations available.
 
         Completed:
         03-22-2021
         """
 
-        # Find Ways To Make Change With Recursion
-        def ways_2_make_change(amount):
-            pass
+        # Find Ways To Make Change With Recursion | This is unfortunately exponential!
+        def ways_2_make_change_1(amount, typesofcoins=[1, 2, 3]):
 
-        print(ways_2_make_change(5.20))
+            # If the amount is zero return 1
+            if amount == 0:
+                return 1
+            if amount < 0:
+                return 0
+
+            # For Each Coin In List
+            result = 0
+            for i in range(len(typesofcoins)):
+                result += ways_2_make_change(amount - typesofcoins[i])
+
+            return result
+
+
+
+        # Find Ways To Make Change With Bottom Up Dynamic Programming | This is Linear In Space & Complexity
+        def ways_2_make_change_2(amount, typesofcoins=[1, 2, 3]):
+
+            # T Represents A List Of Zeros Longer Than Amount + 1, The First Value Is Always 1
+            T = [0] * (amount + 1)
+            T[0] = 1
+
+            # Loop Through Each Coin
+            for i in range(len(typesofcoins)):
+                j = typesofcoins[i]
+                while j <= amount:
+                    T[j] += T[j - typesofcoins[i]]
+                    j = j + 1
+
+            return T[amount]
+
+
+        print(ways_2_make_change_2(3))
