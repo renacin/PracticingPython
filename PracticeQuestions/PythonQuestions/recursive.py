@@ -583,12 +583,14 @@ class recursive_questions:
 
 
         # Find Ways To Make Change With Bottom Up Dynamic Programming | This is Linear In Space & Complexity
-        def ways_2_make_change_2(amount, typesofcoins=[1, 2]):
+        def ways_2_make_change_2(amount, typesofcoins=[1]):
 
             # Remember This Is Dynamic Programming | Only Called Once | Not Recursive
             # T Represents A List Of Zeros Of Lenght (Amount + 1), The First Value Is Always 1
             T = [0] * (amount + 1)                         # T = [0, 0, 0, 0, 0, 0] 5 + 1
             T[0] = 1                                       # T = [1, 0, 0, 0, 0, 0] Index 0 --> 1
+
+            print(f"T Start:{T}")
 
             # Iterate Through Number Of Coins [i = 0, 1, 2]
             for i in range(len(typesofcoins)):
