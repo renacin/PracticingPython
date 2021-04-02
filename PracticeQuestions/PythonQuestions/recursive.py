@@ -583,19 +583,17 @@ class recursive_questions:
 
 
         # Find Ways To Make Change With Bottom Up Dynamic Programming | This is Linear In Space & Complexity
-        def ways_2_make_change_2(amount, typesofcoins=[1]):
+        def ways_2_make_change_2(amount, typesofcoins=[1, 2]):
 
             # Remember This Is Dynamic Programming | Only Called Once | Not Recursive
             # T Represents A List Of Zeros Of Lenght (Amount + 1), The First Value Is Always 1
             T = [0] * (amount + 1)                         # T = [0, 0, 0, 0, 0, 0] 5 + 1
             T[0] = 1                                       # T = [1, 0, 0, 0, 0, 0] Index 0 --> 1
 
-            print(f"T Start:{T}")
-
-            # Iterate Through Number Of Coins [i = 0, 1, 2]
+            # Iterate Through Number Of Coins [i = 0, 1]
             for i in range(len(typesofcoins)):
 
-                # j Represents the denomination of a coin [j = 1, 2, 5]
+                # j Represents the denomination of a coin [j = 1, 2]
                 j = typesofcoins[i]
 
                 # While j (a denomination of coin) is less than or equal to the amount do sub task
@@ -604,7 +602,7 @@ class recursive_questions:
                     # List T At Index J                    # 3 - 1
                     print(f"T Before:{T}")
                     T[j] += T[j - typesofcoins[i]]         # 1. (i=0, j=1) T = [1, 2 , 0, 0, 0, 0],    2. (i=0, j=2) T = [1, 2 , 2, 0, 0, 0],     3. (i=0, j=3) T = [1, 2 , 2, 2, 0, 0]
-                    print(f"j:{j}, T[j]:{T[j]}, TypeOfCoin:{typesofcoins[i]}")
+                    print(f"Amount: {amount}, j:{j}, T[j]:{T[j]}, TypeOfCoin:{typesofcoins[i]}")
                     print(f"T Before:{T}")
                     print("")
 
@@ -613,7 +611,7 @@ class recursive_questions:
 
             return T[amount]
 
-        print(ways_2_make_change_2(3))
+        print(ways_2_make_change_2(2))
 
-        # This shit is confusing
+        # Complicated | This isn't the most readable solution!
         # Better Understand This Problem, And Then Maybe Move Onto One More Problem. Need To Start Census Data Cleaning
