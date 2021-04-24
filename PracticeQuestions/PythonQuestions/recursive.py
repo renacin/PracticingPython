@@ -615,3 +615,38 @@ class recursive_questions:
 
         # Complicated | This isn't the most readable solution!
         # Better Understand This Problem, And Then Maybe Move Onto One More Problem. Need To Start Census Data Cleaning
+
+
+
+    @staticmethod
+    def question_1t():
+        """
+        Question:
+        Create a function that identifies if a string is a palindrome. Use recursion first, then dynamic programming.
+        Note that strings can be either even, or odd lenght. Assume string is common case and no numbers of spaces
+
+        Completed:
+        04-24-2021
+        """
+
+        def palin_check(in_string):
+            """ Input string, algorithm determines if input is a palindrome """
+
+            # If only one character then string is a palindrome
+            if len(in_string) == 1:
+                print("Is a palindrome")
+
+            # If two characters & both same them this is a palindrome
+            elif (len(in_string) == 2) and (in_string[0] == in_string[-1]):
+                print("Is a palindrome")
+
+            # If longer check ends and recursively check for palindrome
+            else:
+                if in_string[0] == in_string[-1]:
+                    palin_check(in_string[1:-1])
+
+                else:
+                    print("Not palindrome")
+
+
+        palin_check("kook")
