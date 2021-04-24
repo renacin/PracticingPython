@@ -623,7 +623,8 @@ class recursive_questions:
         """
         Question:
         Create a function that identifies if a string is a palindrome. Use recursion first, then dynamic programming.
-        Note that strings can be either even, or odd lenght. Assume string is common case and no numbers of spaces
+        Note that strings can be either even, or odd lenght. Assume string is common case and no numbers of spaces, and
+        you can't use the reverse string function
 
         Completed:
         04-24-2021
