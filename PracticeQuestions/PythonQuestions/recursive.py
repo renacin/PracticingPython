@@ -685,3 +685,21 @@ class recursive_questions:
 
 
         cap_check("TheVergeOfGreatness")
+
+
+
+    @staticmethod
+    def question_1v():
+        """
+        Question:
+        Create a function that identifies the index of a capitalized letter within a string.
+        Can be completed recursively or linearly.
+
+        Note that string can have more than one capitalized characters.
+
+        Completed:
+        04-24-2021
+        """
+
+        def pass_():
+            pass
