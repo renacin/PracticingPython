@@ -692,14 +692,7 @@ class recursive_questions:
     def question_1v():
         """
         Question:
-        Create a function that identifies the index of a capitalized letter within a string.
-        Can be completed recursively or linearly.
-
-        Note that string can have more than one capitalized characters.
-
-        Completed:
-        04-24-2021
+        Given a list of numbers, find every permutation possible.
         """
 
-        def pass_():
-            pass
+        def permu(in_list: list) -> "List of all permutations":

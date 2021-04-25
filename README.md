@@ -23,5 +23,6 @@ Recursion Basics & Intermediate Questions | https://www.geeksforgeeks.org/recurs
 
 ### 1.3 Algorithms & Data Structures ###
 Title  | Source
+| :--- | ---:
 Algorithms  | https://github.com/TheAlgorithms/Python
 Variety Of Python Problems  |  https://github.com/MTrajK/coding-problems
