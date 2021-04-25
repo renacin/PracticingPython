@@ -626,6 +626,8 @@ class recursive_questions:
         Note that strings can be either even, or odd lenght. Assume string is common case and no numbers of spaces, and
         you can't use the reverse string function
 
+        Another way to have completed task was to reverse the string and check if both values were equal.
+
         Completed:
         04-24-2021
         """
@@ -651,3 +653,35 @@ class recursive_questions:
 
 
         palin_check("kook")
+
+
+
+    @staticmethod
+    def question_1u():
+        """
+        Question:
+        Create a function that identifies the index of a capitalized letter within a string.
+        Can be completed recursively or linearly.
+
+        Note that string can have more than one capitalized characters.
+
+        Completed:
+        04-24-2021
+        """
+
+        def cap_check(in_string, ridx = 0) -> "Index & Character Value For Each Capitalized Letter":
+
+            # Make sure input is greater or equal to 1!
+            if len(in_string) >= 1:
+
+                # If more that one character check first letter is cap
+                if in_string[0].isupper():
+                    print(f"Letter: {in_string[0]}, Index: {ridx}")
+                    cap_check(in_string[1:], ridx + 1)
+
+                # Move onto next index if none satisfied
+                else:
+                    cap_check(in_string[1:], ridx + 1)
+
+
+        cap_check("TheVergeOfGreatness")
